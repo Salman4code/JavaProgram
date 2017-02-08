@@ -13,7 +13,7 @@ int len = str.length();
 if(len>3)
 System.out.println("Hello "+str+",How Are You");
 else
-System.out.println("Character Must be of 4 digit");
+System.out.println("\nCharacter Must be of 4 digit");
 }
 }
 
