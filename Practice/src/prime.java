@@ -1,9 +1,13 @@
+import java.util.Scanner;
 
 public class prime {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int n = 63, sum = 0;
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter any number");
+		int n , sum = 0;
+		n = sc.nextInt();
 		int flag;
 		for (int i = 1; i < n; i++)
 		{
@@ -22,11 +26,7 @@ public class prime {
 				if(n%i==0){
 					System.out.println(i);
 				}
-				//	sum = sum + i;
 				}
-
 			}
-		
-//System.out.println(sum);
 	}
 }
