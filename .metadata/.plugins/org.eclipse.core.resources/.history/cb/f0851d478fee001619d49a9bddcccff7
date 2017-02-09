@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class Flipcoin {
+public static void main(String[] args) {
+	Scanner sc = new Scanner(System.in);
+	System.out.println("Enter no of time coin to be flip");
+	int n = sc.nextInt();
+	int tail1 = 0,head1 = 0;
+
+	
+	for(int i=0;i<n;i++)
+	{
+		int tail=0,head=0;
+		double num = Math.random();
+		if(num<0.5)
+		tail1 = tail++;
+		else
+		head1 = head++;
+	}
+	double hper = (double)(head1/n)*100.0;
+	double tper = (tail1/n)*100.0;
+	System.out.println("Head Flip Percentage"+hper);
+	System.out.println("Tail Flip Percentage"+tper);
+	
+}
+}
