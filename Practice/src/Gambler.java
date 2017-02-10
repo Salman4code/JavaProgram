@@ -22,26 +22,24 @@ public class Gambler {
 			if (num < 0.5) {
 				win++;
 				$stake++;
-				System.out.println($stake);
 			}
 			else
 			{
 				$stake--;
-				System.out.println($stake);
 			}
 		if($stake==$goal)
 		{
-			wper=(double)(win/No_of_times)*100;
-			System.out.println("Win Percetage"+(100-wper));
-			System.out.println("lose Percentage"+wper);
+			wper=((double)win/i)*100;
+			System.out.println("Lose Percetage"+(100.0-wper));
+			System.out.println("Win Percentage"+wper);
 			System.out.println("Win");
 			return;
 		}
 		else if($stake==0)
 		{
-			wper=(win/No_of_times)*100;
-			System.out.println("WIN Percetage"+(100-wper));
-			System.out.println("Lose Percentage"+wper);
+			wper=((double)win/i)*100;
+			System.out.println("lose Percetage"+(100.0-wper));
+			System.out.println("win Percentage"+wper);
 			System.out.println("loss");
 			return;
 		}
