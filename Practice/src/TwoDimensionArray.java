@@ -102,7 +102,8 @@ System.out.println();
 
 			}
 			pw.println("\t");
-			pw.flush();
+			//  pw.flush();
+			//pw.close();
 		}
 	}
 
