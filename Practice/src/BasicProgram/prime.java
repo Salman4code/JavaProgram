@@ -7,12 +7,12 @@ public class prime {
 		// TODO Auto-generated method stub
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter any number");
-		int n, sum = 0;
+		int n;
 		n = sc.nextInt();
 		int flag;
-		for (int i = 1; i < n; i++) {
+		for (int i = 2; i < n; i++) {
 			flag = 0;
-			for (int j = 2; j < i / 2; j++) {
+			for (int j = 2; j < i ; j++) {
 
 				if (i % j == 0) {
 					flag++;

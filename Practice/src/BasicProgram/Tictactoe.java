@@ -10,19 +10,35 @@ public class Tictactoe {
 		System.out.println("Welcome To tic tac toe game");
 
 		int num = 1, r = 3, c = 3;
-		int pos[][] = new int[r][c];
-
-		// Assigning Number to the Position
-
-		for (int i = 0; i < pos.length; i++) {
-			for (int j = 0; j < pos.length; j++) {
-				pos[i][j] = num;
-				num++;
+		char pos[][] = new char[r][c];
+		char m[][] = new char[r][c];
+		
+		for (int i = 0; i < m.length; i++) {
+			for (int j = 0; j < m.length; j++) {
+				m[i][j]= '.';
+				
 			}
 		}
+		
+		
+		// Assigning Number to the Position
+
+		
+				pos[0][0] ='1';
+				pos[0][1] ='2';
+				pos[0][2] ='3';
+				pos[1][0] ='4';
+				pos[1][1] ='5';
+				pos[1][2] ='6';
+				pos[2][0] ='7';
+				pos[2][1] ='8';
+				pos[2][2] ='9';
+				
+			
+		
 
 		// Displaying Number to the position
-		Display(pos, r, c);
+		Display1(pos, r, c);
 
 		// System.out.println("Enter ");
 		// Accept input from user
@@ -41,10 +57,10 @@ public class Tictactoe {
 				r = 2;
 				c = A - 7;
 			}
-			if (pos[r][c] != 1 && pos[r][c] != 0) {
-				pos[r][c] = 0;
+			if (m[r][c] != 'X' && m[r][c] !='O') {
+				pos[r][c] =(char) 'X';
 			}
-			Display(pos, r, c);
+			Display1(pos, r, c);
 
 			int B;
 			System.out.println("User 2 its your turn");
@@ -60,25 +76,36 @@ public class Tictactoe {
 				r = 2;
 				c = B - 7;
 			}
-			if (pos[r][c] != 1 && pos[r][c] != 0) {
-				pos[r][c] = 1;
+			if (m[r][c] !='X' && m[r][c] != 'O') {
+				pos[r][c] =(char)'O';
 			}
-			Display(pos, r, c);
+			Display1(pos, r, c);
 		}
-		if ((pos[r][0] == 1 && pos[r][1] == 1 && pos[r][2] == 1) || (pos[0][c] == 1 && pos[1][c] == 1 && pos[2][c] == 1)
-				|| (pos[0][0] == 1 && pos[1][1] == 1 && pos[2][2] == 1)
-				|| (pos[0][2] == 1 && pos[1][1] == 1 & pos[2][0] == 1)) {
+		if ((pos[r][0] =='X'  && pos[r][1] =='X' && pos[r][2] == 'X') || (pos[0][c] == 'X' && pos[1][c] == 'X' && pos[2][c] == 'X')
+				|| (pos[0][0] == 'X' && pos[1][1] == 'X' && pos[2][2] == 'X')
+				|| (pos[0][2] == 'X' && pos[1][1] == 'X' & pos[2][0] == 'X')) {
 			System.out.println("You won");
 		}
 
 	}
-
-	public static void Display(int pos[][], int r, int c) {
-
+	public static void  Display1(char pos[][],int r,int c) {
 		for (int k = 0; k < pos.length; k++) {
 			for (int i = 0; i < pos.length; i++) {
 				System.out.print("\t");
 				System.out.print(pos[k][i] + "\t");
+			}
+			System.out.println();
+
+		}
+
+		
+	}
+	public static void Display(char m[][], int r, int c) {
+
+		for (int k = 0; k < m.length; k++) {
+			for (int i = 0; i < m.length; i++) {
+				System.out.print("\t");
+				System.out.print(m[k][i] + "\t");
 			}
 			System.out.println();
 
