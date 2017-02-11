@@ -13,31 +13,33 @@ public class SumOfdistinctTriplets {
 		for (int i = 0; i < n; i++) {
 			arr[i] = sc.nextInt();
 		}
-		SumOfThree(arr);
+		SumOfdistinctTriplets.SumOfThree(arr);
 	}
 
-	private static void SumOfThree(int[] arr1) {
+	public static void SumOfThree(int[] arr1) {
 
 		int n = arr1.length;
-		int count = 0;
-		for (int i = 0; i < n-2; i++) {
-			for (int j = i + 1; j <n-1; j++) {
+		int count = 0, res = 0;
+		for (int i = 0; i < n - 2; i++) {
+			for (int j = i + 1; j < n - 1; j++) {
 				for (int k = j + 1; k < n; k++) {
-					if (arr1[i] + arr1[j] + arr1[k] == 0) {
-						System.out.println("First Distinct Triplets");
-						System.out.println("Number are "+arr1[i]+" "+arr1[j]+" "+arr1[k]);
-						count++;
-					}
-					else
+					res =arr1[i]+arr1[j]+arr1[k];
+					if (arr1[i] + arr1[j] + arr1[k] == 0) 
 					{
-						System.out.println("Number are Not distinst triple");
-					}
-						
-
+						System.out.println("Number are present\t" + arr1[i] + " " + arr1[j] + " " + arr1[k]+"\t at Position\t"+i+" "+j+" "+k);
+						count=0;
+						}
+					} 
 				}
 			}
+			if(count==1)
+			{
+				System.out.println("Triples are not Present");
+				
+			}
+			
 		}
 
 	}
 
-}
+

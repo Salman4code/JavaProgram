@@ -14,15 +14,17 @@ public class Anagram {
 		char[] ch1 = str1.toLowerCase().replaceAll("\\s+", "").toCharArray();
 		char[] ch2 = str2.toLowerCase().replaceAll("\\s+", "").toCharArray();
 
-		// System.out.println(str1);
-		// System.out.println(str2);
+		System.out.println(ch1);
+		System.out.println(ch2);
 		int len = ch1.length;
 		int len1 = ch2.length;
 		if (len == len1) {
 			Arrays.sort(ch1);
 			Arrays.sort(ch2);
 
-			if (Arrays.equals(ch1, ch2)) {
+		//	if (Arrays.equals(ch1, ch2)) 
+			if(ch1==ch2)
+			{
 				System.out.println("String are Anagram");
 			} else {
 				System.out.println("String are not Anagram");

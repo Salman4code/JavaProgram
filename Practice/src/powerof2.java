@@ -20,7 +20,7 @@ public class powerof2 {
         }
         }
         else
-        	System.out.println("Input must be between 0 t0 31");
+        	System.out.println("Input must be between 0 to 31");
 	
 	}
 }
