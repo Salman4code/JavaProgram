@@ -8,7 +8,7 @@ public class powerof2 {
         int n = Integer.parseInt(args[0]);
 
         int i = 0;         	
-        //System.out.println("Enter ");
+        //System.out.println("Enter any number");
         int powerOfTwo = 1;       
 
         if(n>=0 && n<31)

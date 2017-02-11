@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Anagram {
@@ -9,12 +10,25 @@ public class Anagram {
 		String str1 = sc.nextLine();
 		System.out.println("Enter String two");
 		String str2 = sc.nextLine();
-		
-		String str3 =str1.toLowerCase().replaceAll("\\s+","");
-		String str4 = str2.toLowerCase().replaceAll("\\s+","");
 
-		System.out.println(str3);
-		System.out.println(str4);
+		char[] ch1 = str1.toLowerCase().replaceAll("\\s+", "").toCharArray();
+		char[] ch2 = str2.toLowerCase().replaceAll("\\s+", "").toCharArray();
+
+		// System.out.println(str1);
+		// System.out.println(str2);
+		int len = ch1.length;
+		int len1 = ch2.length;
+		if (len == len1) {
+			Arrays.sort(ch1);
+			Arrays.sort(ch2);
+
+			if (Arrays.equals(ch1, ch2)) {
+				System.out.println("String are Anagram");
+			} else {
+				System.out.println("String are not Anagram");
+			}
+		} else {
+			System.out.println("Both String must be of same size");
+		}
 	}
-
 }
