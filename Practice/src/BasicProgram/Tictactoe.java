@@ -1,3 +1,4 @@
+package BasicProgram;
 import java.util.Scanner;
 
 public class Tictactoe {
