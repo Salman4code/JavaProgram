@@ -20,6 +20,7 @@ public class Gambler {
 		
 		for (int i = 0; i < No_of_times; i++) {
 			double num = Math.random();
+			//System.out.println(num);
 			if (num < 0.5) {
 				win++;
 				$stake++;
