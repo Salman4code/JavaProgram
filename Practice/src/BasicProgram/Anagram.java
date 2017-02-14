@@ -1,4 +1,5 @@
 package BasicProgram;
+
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -23,9 +24,8 @@ public class Anagram {
 			Arrays.sort(ch1);
 			Arrays.sort(ch2);
 
-		//	if (Arrays.equals(ch1, ch2)) 
-			if(ch1==ch2)
-			{
+			// if (Arrays.equals(ch1, ch2))
+			if (ch1 == ch2) {
 				System.out.println("String are Anagram");
 			} else {
 				System.out.println("String are not Anagram");
