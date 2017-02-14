@@ -48,7 +48,7 @@ public class Stopwatch {
 					starttime = System.currentTimeMillis();
 				}
 		}}
-		long TimeElapsesd = (starttime - stoptime);
+		long TimeElapsesd = (stoptime - starttime);
 		System.out.println("Time Elapsed between Start and stop \t" + TimeElapsesd);
 		long second = TimeElapsesd / 1000;
 		System.out.println("Time in second " + second);

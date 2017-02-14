@@ -9,7 +9,7 @@ public class Tictactoe {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Welcome To tic tac toe game");
 
-		int num = 1, r = 3, c = 3;
+		int  r = 3, c = 3;
 		char pos[][] = new char[r][c];
 		char m[][] = new char[r][c];
 		

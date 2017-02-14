@@ -7,7 +7,6 @@ public class powerof2 {
 		// TODO Auto-generated method stub
 		// read in one command-line argument
         int n = Integer.parseInt(args[0]);
-
         int i = 0;         	
         //System.out.println("Enter any number");
         int powerOfTwo = 1;       
