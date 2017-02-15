@@ -42,7 +42,7 @@ public class Tictactoe {
 
 		// System.out.println("Enter ");
 		// Accept input from user
-		for (int i = 0; i < 9; i++) {
+		for (int i = 0; i < 5; i++) {
 			int A;
 			System.out.println("User 1 turn");
 			System.out.println("Enter the position number where you want to type 0");
@@ -61,10 +61,14 @@ public class Tictactoe {
 				pos[r][c] =(char) 'X';
 			}
 			Display1(pos, r, c);
-
+			if ((pos[r][0] =='X'  && pos[r][1] =='X' && pos[r][2] == 'X') || (pos[0][c] == 'X' && pos[1][c] == 'X' && pos[2][c] == 'X')
+					|| (pos[0][0] == 'X' && pos[1][1] == 'X' && pos[2][2] == 'X')
+					|| (pos[0][2] == 'X' && pos[1][1] == 'X' & pos[2][0] == 'X')) {
+				System.out.println("You won");
+			if(i<4){
 			int B;
 			System.out.println("User 2 its your turn");
-			System.out.println("Enter the position number where you want to type 1");
+			System.out.println("Enter the position number where you want to type O");
 			B = sc.nextInt();
 			if (B == 1 || B == 2 || B == 3) {
 				r = 0;
@@ -81,12 +85,14 @@ public class Tictactoe {
 			}
 			Display1(pos, r, c);
 		}
-		if ((pos[r][0] =='X'  && pos[r][1] =='X' && pos[r][2] == 'X') || (pos[0][c] == 'X' && pos[1][c] == 'X' && pos[2][c] == 'X')
-				|| (pos[0][0] == 'X' && pos[1][1] == 'X' && pos[2][2] == 'X')
-				|| (pos[0][2] == 'X' && pos[1][1] == 'X' & pos[2][0] == 'X')) {
-			System.out.println("You won");
 		}
+			if ((pos[r][0] =='O'  && pos[r][1] =='O' && pos[r][2] == 'O') || (pos[0][c] == 'O' && pos[1][c] == 'O' && pos[2][c] == 'O')
+					|| (pos[0][0] == 'O' && pos[1][1] == 'O' && pos[2][2] == 'O')
+					|| (pos[0][2] == 'O' && pos[1][1] == 'O' & pos[2][0] == 'O')) {
+				System.out.println("You won");
 
+		}
+		}
 	}
 	public static void  Display1(char pos[][],int r,int c) {
 		for (int k = 0; k < pos.length; k++) {

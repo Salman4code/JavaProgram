@@ -147,16 +147,24 @@ public class linkedListString {
 				display();
 			}
 		}
-		public void removeone(){
+/*		public void removeonce(){
 			//removing from start only once
 		/*	Node ptr = start;
 			start=ptr.getLink();
-			size--;*/
-			Node ptr =end;
-			ptr.setLink(null);
+			size--;
+			//For removing last element in the string
+			Node ptr =start;
+			Node tmp = null ;
+			while(ptr.getLink()!=null)
+			{
+				tmp=ptr;
+				ptr=ptr.getLink();
+			}
+			end=tmp;
+			end.setLink(null);
 			size--;
 			
-		}
+		}*/
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 	 try {
@@ -181,9 +189,9 @@ public class linkedListString {
 		}
 		l.display();
 		//l.search();
-		//l.remove(3);
-		l.removeone();
-		l.removeone();
+		l.remove(3);
+		//l.removeone();
+		//l.removeone();
 		l.display();
 	 } catch (IOException e) {
          e.printStackTrace();

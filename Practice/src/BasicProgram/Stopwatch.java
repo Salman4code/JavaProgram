@@ -24,7 +24,7 @@ public class Stopwatch {
 			System.out.println(starttime);
 		} else {
 			System.out.println("You have entered wrong number");
-			System.out.println("Please Enter 0 to Start the watch");
+		
 			while (s!= 0) {
 				System.out.println("Please Enter 0 to start the watch");
 				s=sc.nextInt();
@@ -40,9 +40,8 @@ public class Stopwatch {
 
 		} else {
 			System.out.println("You have entered wrong number");
-			System.out.println("Please Enter 1 to stop the Watch");
 			while (s!= 1) {
-				System.out.println("Please Enter 0 to start the watch");
+				System.out.println("Please Enter 1 to start the watch");
 				s=sc.nextInt();
 				if(s==1){
 					stoptime = System.currentTimeMillis();

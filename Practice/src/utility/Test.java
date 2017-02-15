@@ -76,7 +76,7 @@ public class Test {
 		}
 		System.out.println("Enter key to search");
 		String key=sc.next();
-		u1.BinarySearchString(arr1, key);
+		int p=u1.BinarySearchString(arr1, key);
 		// u1.insertionsortString(arr1);
 
 		System.out.println("The Sorted String is" + Arrays.toString(arr1));

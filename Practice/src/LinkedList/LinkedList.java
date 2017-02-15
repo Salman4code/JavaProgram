@@ -1,8 +1,13 @@
 package LinkedList;
 
+import java.awt.List;
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 public class LinkedList {
 	protected Node start;
@@ -82,29 +87,32 @@ public class LinkedList {
 			System.out.println(ptr.getData());
 		}
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws FileNotFoundException {
 		// TODO Auto-generated method stub
-		 try {
-	            FileReader reader = new FileReader("/home/bridgeit/workspace/Practice/src/LinkedList/test.txt");
-	            BufferedReader bufferread = new BufferedReader(reader);
-	            String character;
-	            String strp="";
-	            while ((character = bufferread.readLine()) != null) {
-	                System.out.println( character);
-	                strp =strp+character;
-	            }
+		Scanner scanner = new Scanner(new File("/home/bridgeit/workspace/Practice/src/LinkedList/test.txt"));
+		int [] tall = new int [100];
+		int i = 0;
+		while(scanner.hasNextInt())
+		{
+		     tall[i++] = scanner.nextInt();
+		}
+		for(int j=0;j<tall.length;j++)
+		{
+	           System.out.println(tall[j]);
 	           
-	            reader.close();
-	 
-	        } catch (IOException e) {
-	            e.printStackTrace();
-	        }
-		 
+		}
+	            
+	            LinkedList l = new LinkedList();
+	          /*  for (int i = 0; i < str.length; i++) {
+					String tmp = str[i];
+					l.insertAtEnd(i);
+				}*/
+	    		//l.insertAtEnd(25);
+	    		//l.insertAtStart(35);
+	    		l.display();
+	        		 
 		
-		LinkedList l = new LinkedList();
-		l.insertAtEnd(25);
-		l.insertAtStart(35);
-		l.display();
+		
 	}
 
 }

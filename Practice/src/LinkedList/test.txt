@@ -1,1 +1,1 @@
-Hello I like sport
+50,60,70,45,30,25
