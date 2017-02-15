@@ -29,7 +29,7 @@ public double getPrice(){
 return price;
 }
 double calculateStock() {
-		totalstock=((double)Noofshare)*(price);
+		totalstock=(double)((Noofshare)*(price));
 return totalstock;
 }
 public String toString()
