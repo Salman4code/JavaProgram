@@ -14,11 +14,11 @@ public Node(int d,Node n)
 	data =d;
 	link=n;
 }
-public Node getLink(){
-	return link;
-}
 public void setLink(Node n) {
 	this.link =n;
+}
+public  Node getLink(){
+	return link;
 }
 public int  getData() {
 	return data;

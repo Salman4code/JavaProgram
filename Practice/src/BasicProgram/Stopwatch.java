@@ -45,7 +45,7 @@ public class Stopwatch {
 				System.out.println("Please Enter 0 to start the watch");
 				s=sc.nextInt();
 				if(s==1){
-					starttime = System.currentTimeMillis();
+					stoptime = System.currentTimeMillis();
 				}
 		}}
 		long TimeElapsesd = (stoptime - starttime);

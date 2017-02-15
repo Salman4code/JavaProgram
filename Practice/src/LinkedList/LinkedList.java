@@ -51,6 +51,10 @@ public class LinkedList {
 			size++;
 		}
 	
+		public void remove(int pos)
+		{
+			
+		}
 		public void display()
 		{
 			if(size==0)

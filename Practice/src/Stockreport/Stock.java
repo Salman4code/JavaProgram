@@ -1,6 +1,6 @@
 package Stockreport;
 
-import java.util.Scanner;
+
 
 public class Stock {
 private String name;
