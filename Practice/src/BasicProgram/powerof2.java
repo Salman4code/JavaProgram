@@ -21,6 +21,6 @@ public class powerof2 {
         }
         else
         	System.out.println("Input must be between 0 to 31");
-	
+	//System.out.println(powerOfTwo);
 	}
 }

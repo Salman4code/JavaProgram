@@ -27,9 +27,11 @@ public class StockPortfolio {
 		}
 		
 		System.out.println("Stock Detail Are::");
-			for(int i=0;i<a1.size();i++)
+		Stock s =new Stock();
+		for(int i=0;i<a1.size();i++)
 			{
 				System.out.println(a1.get(i));
+				//System.out.println(s.calculateStock());
 			}
  
 			

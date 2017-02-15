@@ -14,6 +14,10 @@ public Stock(String name,int Noofshare,double price)
 	this.Noofshare=Noofshare;
 	this.price=price;
 }
+public Stock()
+{
+	
+}
 public String getname()
 {
 	return name;
@@ -25,14 +29,12 @@ public double getPrice(){
 return price;
 }
 double calculateStock() {
-	double dec=((10*price)/100);
-	price=dec*Noofshare;
-	totalstock+=price;
-return price;
+		totalstock=((double)Noofshare)*(price);
+return totalstock;
 }
 public String toString()
 {
-	return ("Name:\t"+name+"\tNo Of Share:\t"+Noofshare+"\tPrice:\t"+price);
+	return ("Name:\t"+name+"\tNo Of Share:\t"+Noofshare+"\tShare Price:\t"+price+"\tTotal Stock\t"+totalstock);
 }
 
 }

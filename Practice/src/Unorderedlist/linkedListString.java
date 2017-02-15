@@ -1,21 +1,22 @@
-package LinkedList;
+package Unorderedlist;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Scanner;
 
-public class LinkedList {
+public class linkedListString {
 	protected Node start;
 	protected Node end;
 	protected int size;
 
-  public LinkedList() {
+  public linkedListString() {
 		// TODO Auto-generated constructor stub
 	  start=null;
 	  end=null;
 	  size=0;
 	}
-		public void insertAtStart(int val) {
+		public void insertAtStart(String val) {
 			Node nptr = new Node(val,null);
 			size++;
 			if(start==null)
@@ -27,7 +28,7 @@ public class LinkedList {
 				nptr.setLink(start);
 				start= nptr;
 		}
-		public void insertAtEnd(int val) {
+		public void insertAtEnd(String val) {
 			Node nptr = new Node(val,null);
 			size++;
 			if(start==null)
@@ -39,7 +40,7 @@ public class LinkedList {
 				end.setLink(nptr);
 				end= nptr;
 		}
-		public void insertAtpos(int val,int pos) {
+		public void insertAtpos(String val,int pos) {
 			Node nptr = new Node(val,null);
 			Node ptr = start;
 			pos =pos-1;
@@ -57,6 +58,40 @@ public class LinkedList {
 	
 		public void remove(int pos)
 		{
+			if(pos==1)
+			{
+				start =start.getLink();
+				size--;
+				return;
+			}
+			if(pos==size)
+			{
+				Node s =start;
+				Node t=start;
+				while(s!=end)
+				{
+					t=s;
+					s=s.getLink();
+				}
+				end=t;
+				end.setLink(null);
+				size--;
+				return;
+				}
+			Node ptr = start;
+			pos =pos-1;
+			for(int i=1;i<size-1;i++)
+			{
+				if(i==pos)
+				{
+				Node tmp = ptr.getLink();
+				tmp =tmp.getLink();
+				ptr.setLink(tmp);
+				break;
+				}
+				ptr=ptr.getLink();
+			}
+			size--;
 			
 		}
 		public void display()
@@ -82,29 +117,64 @@ public class LinkedList {
 			System.out.println(ptr.getData());
 		}
 
+		public void search()
+		{
+			Node ptr = start;
+			int flag=0;
+			int pos=0;
+			Scanner sc =new Scanner(System.in);
+			System.out.println("Enter String for Search");
+			String s = sc.nextLine();
+			
+			while(ptr.getData()!=null)
+			{
+				pos++;
+				if(ptr.getData().equals(s))
+				{
+					flag++;
+					break;
+				}
+				ptr=ptr.getLink();
+			}
+			if(flag==1)
+			{
+				remove(pos);
+				display();
+			}
+			else 
+			{
+				insertAtpos(s, pos);
+				display();
+			}
+		}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		 try {
+	 try {
 	            FileReader reader = new FileReader("/home/bridgeit/workspace/Practice/src/LinkedList/test.txt");
 	            BufferedReader bufferread = new BufferedReader(reader);
-	            String character;
+	            String character="";
 	            String strp="";
 	            while ((character = bufferread.readLine()) != null) {
 	                System.out.println( character);
-	                strp =strp+character;
+	                strp+=character;
 	            }
-	           
+
+	    		
 	            reader.close();
 	 
-	        } catch (IOException e) {
-	            e.printStackTrace();
-	        }
-		 
-		
-		LinkedList l = new LinkedList();
-		l.insertAtEnd(25);
-		l.insertAtStart(35);
+	       
+		linkedListString l = new linkedListString();
+		String []str = strp.split(" ");
+		for (int i = 0; i < str.length; i++) {
+			String tmp=str[i];
+			l.insertAtEnd(tmp);
+		}
 		l.display();
+		l.search();
+	 } catch (IOException e) {
+         e.printStackTrace();
+     }
+	
 	}
 
 }
