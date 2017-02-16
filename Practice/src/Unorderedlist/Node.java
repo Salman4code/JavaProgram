@@ -15,7 +15,7 @@ public Node(String d,Node n)
 	link=n;
 }
 public void setLink(Node n) {
-	this.link =n;
+	link =n;
 }
 public  Node getLink(){
 	return link;

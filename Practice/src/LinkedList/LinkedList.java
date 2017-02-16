@@ -15,7 +15,7 @@ public class LinkedList {
 	protected Node start;
 	protected Node end;
 	protected int size;
-
+	String st;
 	public LinkedList() {
 		// TODO Auto-generated constructor stub
 		start = null;
@@ -94,8 +94,9 @@ public class LinkedList {
 		size++;
 
 	}
-
+	
 	public void display() {
+		st="";
 		if (size == 0) {
 			System.out.println("Linked list empty");
 			return;
@@ -105,13 +106,17 @@ public class LinkedList {
 			System.out.println(start.getData() + "->");
 		}
 		Node ptr = start;
+	
 		System.out.print(start.getData() + "->");
 		ptr = ptr.getLink();
+		st=st+ptr.getData()+",";
 		while (ptr.getLink() != null) {
 			System.out.print(ptr.getData() + "->");
+			st=st+ptr.getData()+",";
 			ptr = ptr.getLink();
 		}
 		System.out.println(ptr.getData());
+		st=st+ptr.getData()+",";
 	}
 
 	public void Search() {
@@ -188,15 +193,14 @@ public class LinkedList {
 		// l.insertAtStart(35);
 		l.display();
 		l.Search();
+		l.ReinsertinFile();
 		
 	}
 	 public void ReinsertinFile()
 	 {
 		 try {
-	            FileWriter writer = new FileWriter("/home/bridgeit/workspace/Practice/src/LinkedList/test.txt", true);
-	            writer.write("Hello World");
-	            writer.write("\r\n");   // write new line
-	            writer.write("Good Bye!");
+	            FileWriter writer = new FileWriter("/home/bridgeit/workspace/Practice/src/LinkedList/newtest.txt", true);
+	            writer.write(st);
 	            writer.close();
 	        } catch (IOException e) {
 	            e.printStackTrace();

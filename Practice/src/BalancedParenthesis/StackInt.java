@@ -3,13 +3,13 @@ package BalancedParenthesis;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
-public class Stack {
+public class StackInt {
 	protected int Top,len,size;
-	protected char stk[];
-	public Stack(int n)
+	protected int[] stk;
+	public StackInt(int n)
 	{
 		size=n;
-		stk = new char[size];
+		stk = new int[size];
 		Top=-1;
 		len=0;
 	}
@@ -23,13 +23,13 @@ public class Stack {
 	{
 		return len;
 	}
-	public char peek()
+	public int peek()
 	{
 		return stk[Top];
 	}
-	public void push(char i)
+	public void push(int i)
 	{
-	if(Top+1>=size) throw new NoSuchElementException("underflow Exception");	
+	if(Top+1>=size) throw new IndexOutOfBoundsException("underflow Exception");	
 	
 	if(Top+1<size)
 	{
@@ -37,7 +37,7 @@ public class Stack {
 	}
 	len++;
 	}
-	public char pop()
+	public int pop()
 	{
 		if(isEmpty()) throw new NoSuchElementException("Underflow Exception");
 		
