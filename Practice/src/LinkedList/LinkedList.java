@@ -82,7 +82,7 @@ public class LinkedList {
 		}
 		Node ptr =start;
 		pos=pos-1;
-		for (int i = 0; i < size-1; i++) {
+		for (int i = 1; i < size-1; i++) {
 			if (i==pos) {
 				Node tmp = ptr.getLink();
 				tmp=tmp.getLink();
@@ -126,6 +126,7 @@ public class LinkedList {
 			pos++;
 			if (tmp.getData() == num) {
 				flag++;
+				pos--;
 				break;
 			}
 			
@@ -136,7 +137,18 @@ public class LinkedList {
 			remove(pos);
 			display();
 		} else {
-			insertAtpos(num, pos);
+			
+			for (int i = 1; i <=pos; i++) {
+				if(i==pos){
+					insertAtpos(num, pos);
+					break;
+				}
+				else
+					insertAtEnd(num);
+					break;
+			}
+			
+			System.out.println("After Adding number");
 			// insertAtEnd(num);
 			display();
 		}
