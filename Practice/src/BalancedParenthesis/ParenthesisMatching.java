@@ -8,26 +8,38 @@ public class ParenthesisMatching {
 		Scanner scan = new Scanner(System.in);
 		System.out.println("Enter the Expression");
 		String str = scan.next();
-		//Stack<Integer> stk =new Stack<Integer>();
-		StackInt stk =new StackInt(10);
+		//Stack<Character> stk = new Stack<Character>();
+		char ch[] = str.toCharArray();
+		int flag = 0;
+	 StackInt stk =new StackInt(10);
 		for (int i = 0; i < str.length(); i++) {
-			char ch = str.charAt(i);
-			if (ch == '('|| ch =='{'||ch=='[')
-				stk.push(i);
-			else if (ch == ')' || ch == '}' || ch==']') {
-				try {
-					int p = stk.pop() + 1;
-					System.out.println("')' is Matched at" + p);
-				} catch (Exception e) {
-					System.out.println("')' is unmatched at index" + (i + 1));
-				}
+
+			if (ch[0] != '(') {
+				flag++;
+				break;
 			}
+			/*
+			 * if (ch == '(') stk.push(i); else if (ch == ')') { try { int p =
+			 * stk.pop() + 1; System.out.println("')' is Matched at " + p); }
+			 * catch (Exception e) {
+			 * System.out.println("')' is unmatched at index " + (i + 1)); } }
+			 * 
+			 * } while (!stk.isEmpty()) {
+			 * System.out.println("'(' is unmatched at index " + (stk.pop() +
+			 * 1)); }
+			 */
+			if (ch[i] == '(' || ch[i]=='['||ch[i]=='{') {
+				stk.push(ch[i]);
 
+			} else if (ch[i] == ')'||ch[i]==']'||ch[i]=='}') {
+				stk.pop();
+			}
 		}
-		while (!stk.isEmpty()) {
-			System.out.println("'(' is unmatched at index" + (stk.pop() + 1));
+		if (stk.isEmpty()) 
+			System.out.println("Balanced");
+		 else 
+			System.out.println("Not balanced");
 		}
-
-	}
+	
 
 }

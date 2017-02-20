@@ -3,10 +3,12 @@ package BasicProgram;
 import java.util.Scanner;
 
 public class QuestionNumber {
-
+	static int count=0;
+	static int first, last, middle, key;
+	static String input;
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int first, last, middle, key;
+		
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter any number");
 		int n = sc.nextInt();
@@ -28,24 +30,38 @@ public class QuestionNumber {
 		System.out.println("Please type yes or high or low");
 
 		input = sc.nextLine();
-		int count=0;
-		if (input.equals("yes")) {
+	do{	
+		if (input.equals("high")) {
+			first = middle;
+			count++;
+		} else if (input.equals("yes")) {
 			System.out.println("your number is" + middle);
 			count++;
 			return;
-		} else if (input.equals("low")) {
+		} 
+		else if (input.equals("low")) {
 			last = middle;
-			count++;
-		} else if (input.equals("high")) {
-			first = middle;
 			count++;
 		}
 		if(count<n)
 		{
-			middle=(first+last)+1/2;
+			middle=((first+last)+1)/2;
 			System.out.println("Is your number is"+middle);
 			input =sc.nextLine();
 		}
+	}
+
+	while(first<=last);
+	{
+		if(count>key)
+		{
+			System.out.println("Number Not found");
+		}
+		else
+		{
+			System.out.println("Thank you");
+		}
+		
 	}
 	/*
 	 * public static int power(int p,int n) { int powerOfTwo = 1; int i=0; if(n>=0 &&
@@ -55,5 +71,7 @@ public class QuestionNumber {
 	 * 
 	 * }
 	 */
+
+	}
 
 }

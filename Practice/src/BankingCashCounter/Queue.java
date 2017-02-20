@@ -1,13 +1,14 @@
-package Queue;
+package BankingCashCounter;
 import java.util.Scanner;
 
 public class Queue {
- protected int arr[],rear,front,size,len;
- public Queue(int n)
+ protected Object arr[];
+ int rear,front,size,len;
+ public Queue()
  {
-	 size = n;
+	 size = 100;
 	 len=0;
-	 arr=new int[n];
+	 arr=new Object[size];
 	 rear=-1;
 	 front =-1;
 	
@@ -24,27 +25,32 @@ public class Queue {
  {
 	 return len;
  }
- public int peek()
+/* public int peek()
  {
-	 return arr[rear];
- }
- public void insert(int val)
+	// return arr[rear];
+ }*/
+ public boolean insert(Object val)
  {
 	 if(rear==-1)
 	 {
 		 front=0;
 		 rear=0;
 		 arr[rear]=val;
-		 
+		 len++;
+		 return true;
 	 }
 	 else if(rear+1<size)
+	 {
 		 arr[++rear]=val;
 	 len++;
+	 return true;
+	 }
+	 throw new StackOverflowError();
  }
- public int remove()
+ public Object remove()
  {
 	 len--;
-	 int ele =arr[front];
+	 Object ele =arr[front];
 	 if(front==rear)
 	 {
 		 front=-1;
@@ -52,7 +58,7 @@ public class Queue {
 	 }
 	 else
 		 front++;
-	 return ele;
+	 return null;
  }
  public void display()
  {
@@ -66,14 +72,14 @@ public class Queue {
 		 System.out.println(arr[i]);
 	 }
  }
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner sc =new Scanner(System.in);
 		System.out.println("Enter the Size of queue");
 		int n=sc.nextInt();
 		Queue q = new Queue(n);
-		q.insert(10);
+		//q.insert(10);
 		q.display();
-	}
+	}*/
 
 }

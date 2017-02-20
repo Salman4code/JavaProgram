@@ -1,5 +1,6 @@
 package BasicProgram;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class Tictactoe {
@@ -42,10 +43,11 @@ public class Tictactoe {
 
 		// System.out.println("Enter ");
 		// Accept input from user
-		for (int i = 0; i < 5; i++) {
+		for (int i = 0; i < 9; i++) {
+			Random rnd = new Random();
 			int A;
 			System.out.println("User 1 turn");
-			System.out.println("Enter the position number where you want to type 0");
+			System.out.println("Enter the position number where you want to type X");
 			A = sc.nextInt();
 			if (A == 1 || A == 2 || A == 3) {
 				r = 0;
@@ -57,19 +59,25 @@ public class Tictactoe {
 				r = 2;
 				c = A - 7;
 			}
-			if (m[r][c] != 'X' && m[r][c] !='O') {
+			if (pos[r][c] != 'X' && pos[r][c] !='O') {
 				pos[r][c] =(char) 'X';
+			}
+			else
+			{
+				System.out.println("this positon is already filled");
 			}
 			Display1(pos, r, c);
 			if ((pos[r][0] =='X'  && pos[r][1] =='X' && pos[r][2] == 'X') || (pos[0][c] == 'X' && pos[1][c] == 'X' && pos[2][c] == 'X')
 					|| (pos[0][0] == 'X' && pos[1][1] == 'X' && pos[2][2] == 'X')
-					|| (pos[0][2] == 'X' && pos[1][1] == 'X' & pos[2][0] == 'X')) {
+					|| (pos[0][2] == 'X' && pos[1][1] == 'X' && pos[2][0] == 'X')) {
 				System.out.println("You won");
-			if(i<4){
-			int B;
-			System.out.println("User 2 its your turn");
-			System.out.println("Enter the position number where you want to type O");
-			B = sc.nextInt();
+				break;
+			}
+			
+			System.out.println("Computer turn");
+			//System.out.println("Enter the position number where you want to type O");
+			
+			int B = rnd.nextInt(9);
 			if (B == 1 || B == 2 || B == 3) {
 				r = 0;
 				c = B - 1;
@@ -80,12 +88,12 @@ public class Tictactoe {
 				r = 2;
 				c = B - 7;
 			}
-			if (m[r][c] !='X' && m[r][c] != 'O') {
+			if (pos[r][c] !='X' && pos[r][c] != 'O') {
 				pos[r][c] =(char)'O';
 			}
 			Display1(pos, r, c);
 		}
-		}
+		
 			if ((pos[r][0] =='O'  && pos[r][1] =='O' && pos[r][2] == 'O') || (pos[0][c] == 'O' && pos[1][c] == 'O' && pos[2][c] == 'O')
 					|| (pos[0][0] == 'O' && pos[1][1] == 'O' && pos[2][2] == 'O')
 					|| (pos[0][2] == 'O' && pos[1][1] == 'O' & pos[2][0] == 'O')) {
@@ -93,7 +101,7 @@ public class Tictactoe {
 
 		}
 		}
-	}
+
 	public static void  Display1(char pos[][],int r,int c) {
 		for (int k = 0; k < pos.length; k++) {
 			for (int i = 0; i < pos.length; i++) {
